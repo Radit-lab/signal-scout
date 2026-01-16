@@ -161,10 +161,6 @@ export function useSignalScanner() {
         processedPairs: TRADING_PAIRS.length,
         status: currentBest ? 'Scan Complete' : 'No Signal Found',
       }));
-
-      if (!currentBest && failedCount > TRADING_PAIRS.length * 0.5) {
-        setError('Many requests failed. This might be due to CORS or API rate limits.');
-      }
     }
   }, []);
 
